@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simuladores Técnicos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="encabezado-principal">
+        <h1 class="titulo-animado">Simuladores Interactivos</h1>
+        <p class="subtitulo">Desafío Técnico • Ruth Quiroga</p>
+    </header>
+
+    <main class="contenedor-principal">
+        
+        <section class="tarjeta-simulador tarjeta-enfriamiento">
+            <h2 class="titulo-tarjeta">1. Ley de Enfriamiento de Newton</h2>
+            <div class="caja-formula">T = Ts + (T0 - Ts) * e^(-k * t)</div>
+            
+            <form onsubmit="event.preventDefault(); calcularEnfriamiento();">
+                <div class="grupo-formulario">
+                    <label for="t0">Temperatura Inicial (T0) en °F:</label>
+                    <input type="number" id="t0" placeholder="Ingrese la temperatura inicial" value="120" step="any" required>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="ts">Temperatura del Entorno (Ts) en °F:</label>
+                    <input type="number" id="ts" placeholder="Ingrese la temperatura del entorno" value="38" step="any" required>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="k">Constante de Enfriamiento (k):</label>
+                    <input type="number" id="k" placeholder="Ingrese la constante de enfriamiento" value="0.45" step="any" required>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="t">Tiempo transcurrido (t) en horas:</label>
+                    <input type="number" id="t" placeholder="Ingrese el tiempo transcurrido" value="3" step="any" required>
+                </div>
+
+                <button type="submit" class="boton-calcular">¡Calcular Temperatura!</button>
+            </form>
+
+            <div class="zona-resultado">
+                <div id="resultado-enfriamiento" class="bloque-salida">Esperando datos...</div>
+            </div>
+        </section>
+
+        <section class="tarjeta-simulador tarjeta-combinaciones">
+            <h2 class="titulo-tarjeta">2. Cálculo de Combinaciones</h2>
+            <div class="caja-formula">C(n, r) = n! / (r! * (n - r)!)</div>
+            
+            <form onsubmit="event.preventDefault(); calcularCombinaciones();">
+                <h3 class="subtitulo-grupo">Grupo 1 (Elementos Regulares)</h3>
+                <div class="grupo-formulario">
+                    <label for="n1">Total de Objetos (n1):</label>
+                    <input type="number" id="n1" placeholder="Ingrese el total de objetos" value="59" min="1" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="r1">Objetos Tomados (r1):</label>
+                    <input type="number" id="r1" placeholder="Ingrese los objetos tomados" value="5" min="1" required>
+                </div>
+
+                <h3 class="subtitulo-grupo">Grupo 2 (Elementos Especiales)</h3>
+                <div class="grupo-formulario">
+                    <label for="n2">Total de Objetos (n2):</label>
+                    <input type="number" id="n2" placeholder="Ingrese el total de objetos" value="35" min="1" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="r2">Objetos Tomados (r2):</label>
+                    <input type="number" id="r2" placeholder="Ingrese los objetos tomados" value="1" min="1" required>
+                </div>
+
+                <button type="submit" class="boton-calcular">¡Calcular Combinaciones!</button>
+            </form>
+
+            <div class="zona-resultado">
+                <div id="resultado-combinaciones" class="bloque-salida">Esperando datos...</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p>Desarrollo de Simuladores Interactivos con Lógica Matemática</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
