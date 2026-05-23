@@ -8,7 +8,6 @@ function calcularEnfriamiento(){
     let temperatura=ts+((t0-ts)*exponente);
     let resultado=Math.round(temperatura);
 
-    // Conectado dinámicamente al nuevo ID de salida
     document.getElementById("resultado-enfriamiento").innerHTML = "Temperatura Final: " + resultado + "°F";
 }
 
@@ -36,7 +35,6 @@ function calcularCombinaciones(){
     let r2=parseInt(document.getElementById("r2").value);
 
     if(r1>n1||r2>n2){
-        // Muestra el error directamente de forma vistosa en la interfaz
         document.getElementById("resultado-combinaciones").innerHTML = "❌ Error de validación: 'r' no puede ser mayor que 'n'.";
         return;
     }
@@ -45,6 +43,5 @@ function calcularCombinaciones(){
     let comb2=combinacion(n2,r2);
     let totalCombinaciones=comb1*comb2;
 
-    // Conectado dinámicamente al nuevo ID de salida y con formato de miles legible
     document.getElementById("resultado-combinaciones").innerHTML = "Combinaciones Totales: " + totalCombinaciones.toLocaleString('es-ES');
 }
